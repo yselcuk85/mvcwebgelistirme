@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Webproje.Models.TelefonVeri>
+
+@{
+    ViewBag.Title = "Modeller";
+}
+
+<h2>Modeller</h2>
+
+<p>
+    @Html.ActionLink("Liste", "Listele")
+</p>
+<table class="table">
+	<tr>
+		<th>
+			@Html.DisplayNameFor(model => model.Telefon)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.Model)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.Yıl)
+		</th>
+		
+		
+		<th>
+			@Html.DisplayNameFor(model => model.Fiyat)
+		</th>
+			<th></th>
+	</tr>
+
+@foreach (var item in Model) {
+<tr>
+	<td>
+		@Html.DisplayFor(modelItem => item.Telefon)
+	</td>
+	<td>
+		@Html.DisplayFor(modelItem => item.Model)
+	</td>
+	<td>
+		@Html.DisplayFor(modelItem => item.Yıl)
+
+	</td>
+	<td>
+		@Html.DisplayFor(model => item.Fiyat)
+	</td>
+	<td>
+
+		@Html.ActionLink("Edit", "Edit", new { id = item.Id }) 
+		@Html.ActionLink("Delete", "Delete", new { id = item.Id })
+	</td>
+</tr>
+}
+
+</table>
